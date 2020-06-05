@@ -1,7 +1,7 @@
-# 制作可调日期的任务甘特图
+# 可调日期的任务甘特图插件
 
 ## 概要
-之前我们介绍过一篇[甘特图插件](),这次我们要介绍的是另一款甘特图（使用了开源库[frappe-gantt](https://github.com/frappe/gantt)）。与之前相比，这次最大的不同在于日期可以在图形界面上直接拖动来修改。而且还提供进度的管理。
+之前我们介绍过一篇[甘特图插件](https://cybozudev.kf5.com/hc/kb/article/1007997/),这次我们要介绍的是另一款甘特图（使用了开源库[frappe-gantt](https://github.com/frappe/gantt)）。与之前相比，这次最大的不同在于日期可以在图形界面上直接拖动来修改。而且还提供进度的管理。
 
 如果您喜欢这些新功能，或是喜欢这款的UI风格，我们推荐您不妨尝试一下。
 
@@ -12,14 +12,16 @@
 
 
 ## 下载源码，打包，导入
-为了方便之后的自定义开发，建议您下载源码后自行打包上传。
+为了方便之后的自定义开发，建议您下载[源代码]([git](https://gitee.com/cybozudeveloper/plugin-sdk/tree/master/plugin-sdk-master/examples/gantt-task))后自行打包上传。
 
-这里是[下载地址](git)
+如果只是想试用，可以直接下载[打包文件](https://gitee.com/cybozudeveloper/plugin-sdk/blob/master/%E6%8F%92%E4%BB%B6%E5%8C%85/gantt_task.zip)
 
 有关打包和导入的方法，可参见[kintone 插件开发流程](https://cybozudev.kf5.com/hc/kb/article/1000664/)的打包中的导入章节。
 
 ## 应用的准备
-### 创建一个Task管理的应用。应用本身非常简单，我们依照最低需求按下表中的字段创建应用
+### 创建一个适配插件的应用
+
+应用本身非常简单，我们依照最低需求按下表中的字段创建应用
 
 |字段名|类型|code|备注|
 |---|---|---|---|
@@ -38,7 +40,7 @@
 
 
 流程的状态和执行动作可以根据情况自行设定。
-本范例没有做这方面的功能。
+本范例没有使用这些参数。
 
 ### 插件配置
 - 在设置中找到插件
@@ -61,7 +63,7 @@
 
 ## 插件源码的简单介绍
 
-现在我们来看看各部分功能是如何实现的吧。
+现在我们来介绍一下主要功能是如何实现的吧。
 
 ### 添加视图切换的按钮，用天视图按钮举例
 ```javascript
@@ -75,7 +77,21 @@ let ganttButtonElDayTop = document.createElement('button');
 
 ### 根据kintone的record制作图像用的任务object
 ```javascript
+function getFirstAssigneeName(r) {
+  // 由于执行者可以是多人，这里只取第一个人
+  for (const i in r) {
+    if (r[i].type === 'STATUS_ASSIGNEE') {
+      if (r[i].value.length > 0) {
+        return r[i].value[0].name;
+      } else {
+        return 'nobody';
+      }
+    }
+  }
+}
+
 function makeTask(records, config) {
+  // 创建给甘特图用的对象
   let tasks = [];
   for (let i = 0; i < records.length; i++) {
     tasks.push({
@@ -87,7 +103,7 @@ function makeTask(records, config) {
       assignee: getFirstAssigneeName(records[i])
     });
   }
-  // 根据当前执行者排序
+  // 根据当前执行者排序，为了把同一人的任务显示在一起
   tasks.sort((one, two) => {
     if (one.assignee < two.assignee) {
       return 1;
@@ -99,7 +115,7 @@ function makeTask(records, config) {
 }
 ```
 
-### 跟新开始和结束时间的方法
+### 更新开始和结束时间的方法
 ```javascript
 function updateTaskDate(ko, rocodeId, startDate, endDate) {
   var params = {
@@ -117,7 +133,7 @@ function updateTaskDate(ko, rocodeId, startDate, endDate) {
   ko.api(ko.api.url('/k/v1/record', true), 'PUT', params).then(function (resp) {}, function (error) {});
 }
 ```
-更新进度的方法和上面类似，这里不赘述。
+更新进度的方法和上面类似，这里不赘述，具体请参照完整的源代码。
 
 ### 执行者名和颜色对应提示
 ```javascript
@@ -155,18 +171,16 @@ for (let i = 0; i < uniChargeTasks.length; i++) {
 
 ### 显示甘特图
 ```javascript
+// 创建甘特图对象
 let ganttChart = new Gantt('#gantt-target', tasks, {
     on_click: function (task) {
-      console.log(task);
     },
     on_date_change: function (task, start, end) {
       let formatStart = start.Format('yyyy-MM-dd');
       let formatEnd = end.Format('yyyy-MM-dd');
-      console.log(task, formatStart, formatEnd);
       updateTaskDate(kintone, task.id, formatStart, formatEnd);
     },
     on_progress_change: function (task, progress) {
-      console.log(task, progress);
       updateTaskProgress(kintone, task.id, config.progress, progress);
     },
     on_view_change: function (mode) {
@@ -210,5 +224,5 @@ let ganttChart = new Gantt('#gantt-target', tasks, {
 ## 注意事项
 - 此插件是用于演示如何开发插件的范例，才望子不予以保证可正常运行。
 - 不对此范例提供技术支持。
-- 此范例推荐在Chrome、firefox中使用，在其他浏览器中的行为可能有异常。
 - kintone的插件功能只可在标准版使用，简易版不可使用这点请大家注意一下
+- 此范例推荐在Chrome、firefox中使用，在其他浏览器中的行为可能有异常。
