@@ -1,14 +1,14 @@
 # 可调日期的任务甘特图插件
 
 ## 概要
-之前我们介绍过一篇[甘特图插件](https://cybozudev.kf5.com/hc/kb/article/1007997/),这次我们要介绍的是另一款甘特图（使用了开源库[frappe-gantt](https://github.com/frappe/gantt)）。与之前相比，这次最大的不同在于日期可以在图形界面上直接拖动来修改。而且还提供进度的管理。
+之前我们介绍过一篇[甘特图插件](https://cybozudev.kf5.com/hc/kb/article/1007997/)，这次我们要介绍的是另一款甘特图（使用了开源库[frappe-gantt](https://github.com/frappe/gantt)）。与之前相比，这次最大的不同在于日期可以在图形界面上直接拖动来修改。而且还提供进度的管理。
 
 如果您喜欢这些新功能，或是喜欢这款的UI风格，我们推荐您不妨尝试一下。
 
 ## 完成后的样子
 下面是使用这个插件后，应用上显示的样子。
 根据记录列表里的记录数据来显示甘特图。
-![picture 5](images/430e7f0d58b2b999c9a82c0a56033edd152e0dd700e040d75074662900d82684.png)
+![picture 1](images/9e6ac57fa50ec52fd0298756cac36250301f840cf44fe6e070006847d0581fab.gif)
 
 
 ## 下载源码，打包，导入
@@ -16,7 +16,7 @@
 
 如果只是想试用，可以直接下载[打包文件](https://gitee.com/cybozudeveloper/plugin-sdk/blob/master/%E6%8F%92%E4%BB%B6%E5%8C%85/gantt_task.zip)
 
-有关打包和导入的方法，可参见[kintone 插件开发流程](https://cybozudev.kf5.com/hc/kb/article/1000664/)的打包中的导入章节。
+有关打包和导入的方法，可参见[kintone 插件开发流程](https://cybozudev.kf5.com/hc/kb/article/1000664/)中的打包导入章节。
 
 ## 应用的准备
 ### 创建一个适配插件的应用
