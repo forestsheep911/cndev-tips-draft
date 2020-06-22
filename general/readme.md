@@ -24,10 +24,10 @@
 
 1. 安装vscode，这个简单不赘述
 2. 安装插件【Markdown Preview Enhanced】
-![picture 1](../images/4bb0253c1b2fee45d9b99f0b69cfe2cdd85568584ebad870c7206ccacdf529b2.png)
+![picture 1](images/4bb0253c1b2fee45d9b99f0b69cfe2cdd85568584ebad870c7206ccacdf529b2.png)
 3. ctrl + alt + p 调出命令面板
 4. 输入 Markdown Preview Enhanced: Customize CSS 其中的几个字符，找到这条命令后回车
-![picture 2](../images/937553b599bff6cc11069fa764f1f144d52e213dbf29011cb4b5279711e6ebf3.png)
+![picture 2](images/937553b599bff6cc11069fa764f1f144d52e213dbf29011cb4b5279711e6ebf3.png)
 5. 发现打开了一个叫style.less的文件，这个就是负责渲染css的。
 6. 打开我已经预先编辑好的[格式文件](https://raw.githubusercontent.com/forestsheep911/cndev-tips-draft/master/general/kf5.less), 拷贝全部内容拷贝到style.less后保存。
 7. 随便建一个工作用的文件夹，在下面编辑一个markdown文件。
