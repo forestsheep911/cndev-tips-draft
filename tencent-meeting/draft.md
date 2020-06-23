@@ -4,52 +4,56 @@
 ## 准备
 
 ### 安装腾讯会议客户端
-通过以下链接，选择适合您的腾讯会议客户端，并安装。
-
-https://meeting.tencent.com/download-center.html?from=1002
+选择适合您的腾讯会议客户端，并[安装](https://meeting.tencent.com/download-center.html?from=1002)。
 
 
 ### API接口调用资格申请
-在调用腾讯会议API前我们需要申请调用资格，来获取App ID，Secret ID，Secret Key，
-
-申请地址：https://meeting.tencent.com/open-api.html
-
+在调用腾讯会议API前我们需要[申请调用资格](https://meeting.tencent.com/open-api.html)，来获取App ID，Secret ID，Secret Key。
 
 ## 如何使用插件
 
 ### STEP1：在Kintone中导入插件
-在Kintone中导入插件(Tencent Meeting for Kintone)。关于插件的导入方法，请参考kintone帮助文档 在kintone中安装插件。
+在Kintone中导入插件(Tencent Meeting for Kintone)。关于插件的导入方法，请参考kintone帮助文档 [在kintone中安装插件](https://help.cybozu.cn/k/zh/admin/system_customization/add_plugin/plugin.html)
+
+$$
+\undergroup{\overgroup{\it\textcolor{#ff00dd}{疑问：插件的下载地址呢？}}}
+\\
+\clubsuit \textcolor{#12df36}{bxu} \clubsuit
+$$
 
 
 ### STEP2：在应用中添加插件
-在应用中添加插件(Tencent Meeting for Kintone)。关于插件的添加方法，请参考kintone帮助文档 在应用中添加插件。
-
+在应用中添加插件(Tencent Meeting for Kintone)。关于插件的添加方法，请参考kintone帮助文档 [在应用中添加插件](https://help.cybozu.cn/k/zh/user/app_settings/plugin.html)。
 
 ### STEP3：配置插件
 
 #### Form设置
 添加三个单行文本框，二个日期时间栏，作为插件所需表单控件
 
+![picture 1](images/193cf52293121af6490390fac4eff3bc36d81bf42c3b06dcd64c79c583681965.png)  
+
+
 #### 插件设置
 1. 在应用管理页面中点击“插件”，
 　　然后点击Tencent Meeting for Kintone插件的齿轮图标。
 2. 设置各项。
 
-`设置页面可根据登录用户设置的语言自动切换成中文、或英语（日文语言时显示中文）。`
+$$\textcolor{red}{※　设置页面可根据登录用户设置的语言自动切换成中文、或英语（日文语言时显示中文）。}$$
+
+![picture 2](images/d7dfd41842a76d5ecf9a76092ae95d64f0326e6231443a7a8475133e57484ef6.png)  
+
 
 | 项目名称           | 说明                                                                                                             |
 |--------------------|------------------------------------------------------------------------------------------------------------------|
 | 腾讯会议账号       | 用户的腾讯会议账号，作为会议创建者                                                                               |
-| 腾讯会议AppID      | 调用腾讯会议API所需要的AppID，详细参考上文 “API接口调用资格申请” ※                                                |
-| 腾讯会议身份密钥   | 调用腾讯会议API所需要的身份密钥，详细参考上文 “API接口调用资格申请” ※                                             |
-| 腾讯会议身份识别ID | 调用腾讯会议API所需要的身份识别ID，详细参考上文 “API接口调用资格申请” ※                                           |
+| 腾讯会议AppID      | 调用腾讯会议API所需要的AppID，详细参考上文 “API接口调用资格申请” $\textcolor{red}{※注意：该信息涉及安全性，请妥善保管。}$                                                |
+| 腾讯会议身份密钥   | 调用腾讯会议API所需要的身份密钥，详细参考上文 “API接口调用资格申请” $\textcolor{red}{※注意：该信息涉及安全性，请妥善保管。}$                                             |
+| 腾讯会议身份识别ID | 调用腾讯会议API所需要的身份识别ID，详细参考上文 “API接口调用资格申请” $\textcolor{red}{※注意：该信息涉及安全性，请妥善保管。}$                                           |
 | 腾讯会议ID         | 选择会议ID所关联的App项目code, 项目类型为单行文本框， 该值不能和“腾讯会议主题”，“腾讯会议链接”字段选择的值相同。 |
 | 腾讯会议主题       | 选择会议主题所关联的App项目code, 项目类型为单行文本框， 该值不能和“腾讯会议ID”，“腾讯会议链接”字段选择的值相同。 |
 | 腾讯会议开始时间   | 选择会议开始时间所关联的App项目code, 项目类型为日期和时间， 该值不能和“腾讯会议结束时间”字段选择的值相同。       |
 | 腾讯会议结束时间   | 选择会议结束时间所关联的App项目code, 项目类型为日期和时间， 该值不能和“腾讯会议开始时间”字段选择的值相同。       |
 | 腾讯会议链接       | 选择会议链接所关联的App项目code, 项目类型为单行文本框， 该值不能和“腾讯会议主题”，“腾讯会议ID”字段选择的值相同。 |
-
-`※注意：该信息涉及安全性，请妥善保管。`
 
 3. 点击[保存]。
 4. 点击[应用的设置]页面上的[更新应用]，插件的设置即可生效。
@@ -65,6 +69,9 @@ https://meeting.tencent.com/download-center.html?from=1002
 
 #### 取消会议
 进入App 记录详细页面，点击左上角会议取消按钮，取消会议。
+
+![picture 3](images/ea7d65c49c5e981a9c052a37768b73df3723821c3c396f9985bc45d56cd804d4.png)  
+
 
 ## 注意事项
 - 本插件不直接提供腾讯会议产品，请在使用本插件前自行购买腾讯会议产品，具体解释请参照官方 Link
