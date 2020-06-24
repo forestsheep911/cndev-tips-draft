@@ -1,5 +1,5 @@
 ## 概要
-疫情催生远程办公的热潮，各式各样的在线办公产品纷纷推出，腾讯会议这样一个提供高清流畅、便捷易用、安全可靠的多人云会议产品也诞生了。今天我们来了解下如何把腾讯会议接入到Kintone中，让Kintone的用户能够快速创建，更改会议。
+疫情催生远程办公的热潮，各式各样的在线办公产品纷纷推出，腾讯会议这样一个提供高清流畅、便捷易用、安全可靠的多人云会议产品也诞生了。今天我们来了解下如何把腾讯会议接入到kintone中，让kintone的用户能够快速创建，更改会议。
 
 ## 准备
 
@@ -12,18 +12,12 @@
 
 ## 如何使用插件
 
-### STEP1：在Kintone中导入插件
-在Kintone中导入插件(Tencent Meeting for Kintone)。关于插件的导入方法，请参考kintone帮助文档 [在kintone中安装插件](https://help.cybozu.cn/k/zh/admin/system_customization/add_plugin/plugin.html)
-
-$$
-\undergroup{\overgroup{\it\textcolor{#ff00dd}{疑问：插件的下载地址呢？}}}
-\\
-\clubsuit \textcolor{#12df36}{bxu} \clubsuit
-$$
-
+### STEP1：下载并中导入插件
+1. [下载插件地址](https://gitee.com/cybozudeveloper/kintone-tencent-meeting-plugin/tree/master)
+2. 在kintone中导入插件。关于插件的导入方法，请参考kintone帮助文档 [在kintone中安装插件](https://help.cybozu.cn/k/zh/admin/system_customization/add_plugin/plugin.html)
 
 ### STEP2：在应用中添加插件
-在应用中添加插件(Tencent Meeting for Kintone)。关于插件的添加方法，请参考kintone帮助文档 [在应用中添加插件](https://help.cybozu.cn/k/zh/user/app_settings/plugin.html)。
+在应用中添加插件(Tencent Meeting for kintone)。关于插件的添加方法，请参考kintone帮助文档 [在应用中添加插件](https://help.cybozu.cn/k/zh/user/app_settings/plugin.html)。
 
 ### STEP3：配置插件
 
@@ -35,7 +29,7 @@ $$
 
 #### 插件设置
 1. 在应用管理页面中点击“插件”，
-　　然后点击Tencent Meeting for Kintone插件的齿轮图标。
+　　然后点击Tencent Meeting for kintone插件的齿轮图标。
 2. 设置各项。
 
 $$\textcolor{red}{※　设置页面可根据登录用户设置的语言自动切换成中文、或英语（日文语言时显示中文）。}$$
@@ -60,7 +54,7 @@ $$\textcolor{red}{※　设置页面可根据登录用户设置的语言自动�
 
 ### STEP4：使用插件
 #### 创建会议
-进入App 记录添加页面，填写会议主题，选择开始时间和结束时间，开始时间必须小于结束时间，点击保存按钮。腾讯会议自动创建，会议ID 和URL 自动保存到App 的“腾讯会议ID”和“腾讯会议链接”字段中。
+进入App 记录添加页面，填写会议主题，选择开始时间和结束时间，开始时间必须小于结束时间，点击保存按钮。腾讯会议自动创建，会议ID和URL自动保存到App的“腾讯会议ID”和“腾讯会议链接”字段中。
 
 点击腾讯会议链接，可以打开腾讯会议APP，进行会议。
 
@@ -68,13 +62,13 @@ $$\textcolor{red}{※　设置页面可根据登录用户设置的语言自动�
 进入App 记录编辑页面，可以修改主题，开始时间和结束时间，点击保存按钮，会议信息被更新。
 
 #### 取消会议
-进入App 记录详细页面，点击左上角会议取消按钮，取消会议。
+进入App记录详细页面，点击左上角会议取消按钮，取消会议。
 
-![picture 3](images/ea7d65c49c5e981a9c052a37768b73df3723821c3c396f9985bc45d56cd804d4.png)  
+![picture 3](images/edb3591c-c54e-466a-a08b-c303039bca68.gif)  
 
 
 ## 注意事项
-- 本插件不直接提供腾讯会议产品，请在使用本插件前自行购买腾讯会议产品，具体解释请参照官方 Link
+- 本插件不直接提供腾讯会议产品，请在使用本插件前自行购买腾讯会议产品，具体解释请参照官方[Link](https://meeting.tencent.com/index.html)
 - 此插件是用于演示如何开发插件的范例，才望子不予以保证可正常运行。
 - 不对此范例提供技术支持。
 - kintone的插件功能只可在标准版使用，简易版不可使用这点请大家注意一下。
