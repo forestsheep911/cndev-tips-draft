@@ -13,6 +13,9 @@
 ### 本地编辑的想法
 我想出了依托vscode编辑器的强大功能，用markdown语法来写本地草稿，并实时渲染kf5最终成果的html效果。这样可以一并解决上述困扰。
 
+### 完成后的样子
+![picture 4](images/4e13e908cf7e94d852678eda47498e138be9c3a056dd6b866c1a86ec619befd4.png)  
+
 ### 需要的东西和原理
 
 - vscode: 整个的编辑环境（必须）
@@ -20,7 +23,7 @@
 - vscode插件【Markdown Image】: 方便贴图（可选）
 - vscode插件【Markdown All in One】: markdown编辑时的一些基础辅助功能（可选）
 
-### 环境准备步骤
+### 环境安装步骤
 
 1. 安装vscode，这个简单不赘述
 2. 安装插件【Markdown Preview Enhanced】
@@ -28,7 +31,7 @@
 3. ctrl + alt + p 调出命令面板
 4. 输入 Markdown Preview Enhanced: Customize CSS 其中的几个字符，找到这条命令后回车
 ![picture 2](images/937553b599bff6cc11069fa764f1f144d52e213dbf29011cb4b5279711e6ebf3.png)
-5. 发现打开了一个叫style.less的文件，这个就是负责渲染css的。
-6. 打开我已经预先编辑好的[格式文件](https://raw.githubusercontent.com/forestsheep911/cndev-tips-draft/master/general/kf5.less), 拷贝全部内容拷贝到style.less后保存。
-7. 随便建一个工作用的文件夹，在下面编辑一个markdown文件。
-8. 写好markdown之后，右键文本区域，选择【Markdown Preview Enhanced: Open Preview to the Side】,双屏同步预览完美呈现。
+5. 发现打开了一个叫style.less的文件，这个就是负责渲染css的。![picture 1](images/6cc8ee9e02df47e9ccadcd8cd61a97b291d6fb035c50570d8688b4b780392467.png)
+6. 打开我已经预先编辑好的[格式文件](https://raw.githubusercontent.com/forestsheep911/cndev-tips-draft/master/general/kf5.less),把全部内容拷贝到style.less后保存。![picture 2](images/532c19eafd2f19313579c2cfc5f2ff6c2c3363cc48fa219ab1adb737a2478c09.png)
+7. 随便建一个工作用的文件夹，在下面编辑一个markdown文件。为了贴图方便，极力推荐在打开文件夹的情况下编辑文档。
+8. 写好markdown之后，右键文本区域，选择【Markdown Preview Enhanced: Open Preview to the Side】,双屏同步预览完美呈现。![picture 3](images/c2609dc2badee06a565f05b533b38cb4cde75bdc867413ae8f0d921d52e15c5b.png)  
