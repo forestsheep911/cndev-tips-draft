@@ -33,7 +33,7 @@ Notion和kintone的二维结构表格中的字段，都有自己类型的设计�
 ### Notion方面的准备
 
 - 在Notion中建立一个database，建立几个想要对接字段 。这里我建立了一个书店的表格。![1667359285399.png](./1667359285399.png)
-- 要使用Notion的API，则先要创建一个integration。integration字面翻译叫做“融入”，这是Notion自己的叫法，我们可以简单理解为平时经常说的API Token。创建方式见[官方文档](https://www.notion.so/help/create-integrations-with-the-notion-api)。创建成功后你会得到一个Secrets字符串。 ![1667360913887.png](./1667360913887.png)
+- 要使用Notion的API，则先要创建一个integration。integration字面翻译叫做“融入”，这是Notion自己的叫法，我们可以简单理解为平时经常说的API Token。创建方式见[官方文档](https://www.notion.so/help/create-integrations-with-the-notion-api)。创建成功后你会得到一个Secrets字符串。 ![1667360913887.png](./1667360913887e.png)
 - 有了integration之后，还要把它连接到刚才的database中，使得在调用API时，获得此database的访问权限。在最右上角的三个点图标中，找到Add connections，输入刚才的integration名，确认后连接成功。 ![1667360719594.png](./1667360719594.png)
 
 ### kintone方面的准备
@@ -50,7 +50,7 @@ Notion和kintone的二维结构表格中的字段，都有自己类型的设计�
     标签: 'label',
   }
   ```
-- 创建token，以便将来程序中访问此App。 ![1667362322568.png](./1667362322568.png)
+- 创建token，以便将来程序中访问此App。 ![1667362322568.png](./1667362322568e.png)
 
   ### 程序编写运行环境方面
 - 本文中所演示的代码，都是在nodejs的npm模式下编写调试的，我们也强烈建议您也在这种模式下来编写程序。而且我们将分别使用Notion和kintone的SDK，这种模式下引用库也会相对方便一些。下面是package.json文件的一部分相关设置，供您参考。
@@ -142,7 +142,7 @@ for (const record of notionDBRecords.records) {
     delete record[key]
   }
 }
-notionDBRecords.app = 
+notionDBRecords.app = 999
 // 调用kintone sdk把数据添加到kintone
 const client = new KintoneRestAPIClient({
   baseUrl: 'https://yourdomain.cybozu.cn',
